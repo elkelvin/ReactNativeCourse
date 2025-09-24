@@ -1,12 +1,13 @@
 import { View, FlatList, Text } from "react-native";
 import { CATEGORIES } from "../data/data";
 import CategoryGridTitle from "../components/CategoryGridTitle";
-import { useNavigation } from "@react-navigation/native";
 
 const CategoriesScreen = ({ navigation }) => {
   const renderItem = (itemData) => {
     const onPressHandler = () => {
-      navigation.navigate("MealsOverview");
+      navigation.navigate("MealsOverview", {
+        categoryId: itemData.item.id
+      });
     };
 
     return (

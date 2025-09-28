@@ -6,12 +6,17 @@ const MealsOverviewScreen = ({ route }) => {
   const displayMeals = MEALS.filter(mealItem => mealItem.categoryIds.includes(categoryId));
 
   const renderMealItem = (item) => {
-    return <MealItem item={item.item.title} />
+    const element = item.item;
+    const props = {
+      title: element.title, urlImg: element.imageUrl, duration: element.duration,
+      complexity: element.complexity, affordability: element.affordability
+    };
+    return <MealItem {...props} />
   }
 
   return (
     <View style={style.container}>
-      <Text>Meals Overview Screen {categoryId}</Text>
+      <Text>Meals Overview Screen</Text>
       <FlatList
         keyExtractor={(item) => item.id}
         data={displayMeals}

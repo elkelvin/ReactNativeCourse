@@ -7,10 +7,10 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   const displayMeals = MEALS.filter(mealItem => mealItem.categoryIds.includes(categoryId));
 
   useLayoutEffect(() => {
-    const categoryTitle = CATEGORIES.find((category) => category.id == categoryId);
-    navigation.SetOptions({
+    const categoryTitle = CATEGORIES.find((category) => category.id == categoryId).title;
+    navigation.setOptions({
       title: categoryTitle
-    })
+    });
   }, [categoryId, navigation]);
 
   const renderMealItem = (item) => {

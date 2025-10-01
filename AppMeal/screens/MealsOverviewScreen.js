@@ -16,8 +16,9 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   const renderMealItem = (item) => {
     const element = item.item;
     const props = {
+      id: element.id,
       title: element.title, urlImg: element.imageUrl, duration: element.duration,
-      complexity: element.complexity, affordability: element.affordability
+      complexity: element.complexity, affordability: element.affordability,
     };
     return <MealItem {...props} />
   }

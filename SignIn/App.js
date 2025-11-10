@@ -34,20 +34,23 @@ const AuthenticatedStack = () => {
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
     </Stack.Navigator>);
 }
+
 const SystemNavigation = () => {
-  <NavigationContainer>
-    <AuthStack />
-  </NavigationContainer>
+  return (
+    <NavigationContainer>
+      <AuthStack />
+    </NavigationContainer>);
 }
-export const App = () => {
+
+const App = () => {
   return (
     <>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <SystemNavigation />
     </>
-
   );
 }
+export default App;
 
 const styles = StyleSheet.create({
   container: {
